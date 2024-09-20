@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morthy JSON server</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="main-container" class="main-container wrapper">
+        <div id="searching-container" class="searching-container">
+            <span>Filters:</span>
+            <input type="text" id="filter-by-name" class="filter-input" placeholder="Filter by name">
+            <div class="radio-inputs">
+                <input type="radio" class="radio-checkbox" name="status" id="Alive" value="Alive" checked>
+                <label for="Alive">Alive</label>
+                <input type="radio" class="radio-checkbox" name="status" id="Dead" value="Dead">
+                <label for="Dead">Dead</label>
+                <input type="radio" class="radio-checkbox" name="status" id="unknown" value="unknown">
+                <label for="unknown">unknown</label>
+            </div>
+        </div>
+        <div id="cards-container" class="cards-container"></div>
+        <div id="pagination" class="pagination">
+            <button id="arrow-left">&larr;</button>
+            <button id="arrow-right">&rarr;</button>
+        </div>
+    </div>
+    <form class="creating-form" id="creating-form" method="POST">
+        <p class="creating-header">Create a character</p>
+        <input type="text" id="new-character-name" name="name" placeholder="Character name" required>
+        <select id="new-character-status" name="status">
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+            <option value="unknown">Unknown</option>
+        </select>
+        <input type="text" id="new-character-species" name="species" placeholder="Species" required>
+        <button type="submit" id="creating-btn">Create</button>
+    </form>
+    <script src="./app.js"></script>
+</body>
+
+</html>

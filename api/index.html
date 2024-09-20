@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morthy</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="main-container" class="main-container wrapper">
+        <div id="searching-container" class="searching-container">
+            <span>Filters:</span>
+            <input type="text" id="filter-by-name" class="filter-input" placeholder="Filter by name">
+            <div class="radio-inputs">
+                <input type="radio" class="radio-checkbox" name="status" id="alive" value="alive" checked>
+                <label for="alive">Alive</label>
+                <input type="radio" class="radio-checkbox" name="status" id="dead" value="dead">
+                <label for="dead">Dead</label>
+                <input type="radio" class="radio-checkbox" name="status" id="unknown" value="unknown">
+                <label for="unknown">Unknown</label>
+            </div>
+        </div>
+        <div id="cards-container" class="cards-container"></div>
+        <div id="pagination" class="pagination">
+            <button id="arrow-left">&larr;</button>
+            <button id="arrow-right">&rarr;</button>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+
+</html>
