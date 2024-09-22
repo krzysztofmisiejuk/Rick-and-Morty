@@ -129,7 +129,7 @@ const createNewCharacter = async (event) => {
 			},
 			body: JSON.stringify(newCharacter),
 		});
-		updateCards(1);
+		updateCards(currentPage);
 	} catch (error) {
 		console.error('ERROR:', error);
 	}
