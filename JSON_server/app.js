@@ -30,13 +30,13 @@ const showNoResultInfo = () => {
 	cardsContainer.appendChild(noResultInfo);
 };
 
-const dispalyImage = (parent, src) => {
+const displayImage = (parent, src) => {
 	const img = document.createElement('img');
 	img.setAttribute('src', `${src}`);
 	parent.appendChild(img);
 };
 
-const assignCharacterParams = (parent, name, status, species) => {
+const assignParamsToCharacter = (parent, name, status, species) => {
 	const charName = document.createElement('p');
 	const charStatus = document.createElement('p');
 	const charSpecies = document.createElement('p');
@@ -61,8 +61,8 @@ const createCard = (image, name, status, species, id) => {
 	const card = document.createElement('div');
 	card.classList.add('card');
 	card.id = id;
-	dispalyImage(card, image);
-	assignCharacterParams(card, name, status, species);
+	displayImage(card, image);
+	assignParamsToCharacter(card, name, status, species);
 	createDeleteBtn(card);
 	cardsContainer.append(card);
 };
@@ -109,7 +109,8 @@ const prevPage = () => {
 	updateCards(currentPage);
 };
 
-const createNewCharacter = async () => {
+const createNewCharacter = async (event) => {
+	event.preventDefault();
 	const newName = document.getElementById('new-character-name').value;
 	const newStatus = document.getElementById('new-character-status').value;
 	const newSpecies = document.getElementById('new-character-species').value;
@@ -128,11 +129,11 @@ const createNewCharacter = async () => {
 			},
 			body: JSON.stringify(newCharacter),
 		});
-		const data = await response.json();
 		updateCards(1);
 	} catch (error) {
 		console.error('ERROR:', error);
 	}
+	creatingForm.reset();
 };
 
 const deleteCharacter = async (id) => {
@@ -140,7 +141,6 @@ const deleteCharacter = async (id) => {
 		const response = await fetch(`http://localhost:3000/results/${id}`, {
 			method: 'DELETE',
 		});
-		const data = await response.json();
 		updateCards(1);
 	} catch (error) {
 		console.error('Error:', error);
@@ -153,5 +153,7 @@ inputs.forEach((input) => {
 });
 nextBtn.addEventListener('click', nextPage);
 prevBtn.addEventListener('click', prevPage);
-creatingForm.addEventListener('submit', createNewCharacter);
+creatingForm.addEventListener('submit', (event) => {
+	createNewCharacter(event);
+});
 document.addEventListener('DOMContentLoaded', () => updateCards(1));
