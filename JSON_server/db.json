@@ -139,13 +139,6 @@
       "status": "unknown",
       "species": "Human",
       "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg"
-    },
-    {
-      "name": "Janusz",
-      "status": "Alive",
-      "species": "Dupa",
-      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
-      "id": 21
     }
   ]
 }
