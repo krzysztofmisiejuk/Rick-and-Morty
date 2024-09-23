@@ -8,7 +8,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 body {
 	display: flex;
 	align-items: center;
@@ -79,7 +78,6 @@ body {
 	align-self: flex-start;
 	margin-left: 0.5rem;
 }
-
 .pagination button {
 	background-color: var(--button-color);
 	color: var(--white);
@@ -89,7 +87,6 @@ body {
 	cursor: pointer;
 	transition: color 0.3s, background-color 0.3s;
 }
-
 .pagination button:hover {
 	background-color: var(--white);
 	color: var(--button-color);
