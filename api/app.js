@@ -62,7 +62,6 @@ const updateCards = async (currentPage = 1) => {
 		);
 		const data = await response.json();
 		cardsContainer.innerHTML = '';
-
 		if (data.results && data.results.length > 0) {
 			data.results.forEach(({ image, name, status, species }) => {
 				createCard(image, name, status, species);
