@@ -38,12 +38,10 @@ body {
 .filter-input {
 	margin: 0.3rem;
 }
-
 .filter-input {
 	padding: 0.2rem;
 	font-size: 1rem;
 }
-
 .cards-container {
 	display: flex;
 	flex-direction: row;
