@@ -75,6 +75,7 @@ const updateCards = async (currentPage) => {
 			`http://localhost:3000/results?status=${characterStatus}&name_like=${characterName}&_page=${currentPage}&_limit=${limit}`
 		);
 		const data = await response.json();
+
 		cardsContainer.innerHTML = '';
 		if (data && data.length > 0) {
 			data.forEach(({ image, name, status, species, id }) => {
