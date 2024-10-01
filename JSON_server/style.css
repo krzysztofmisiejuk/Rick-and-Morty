@@ -88,7 +88,6 @@ body {
 	color: var(--white-color);
 	font-size: 2rem;
 }
-
 button {
 	background-color: var(--button-color);
 	color: var(--white-color);
@@ -120,7 +119,6 @@ button:hover {
 	background-color: var(--white-color);
 	box-shadow: 0px 0px 5px var(--shadow-color);
 }
-
 .creating-form input,
 .creating-form select,
 .creating-form button {

@@ -103,6 +103,7 @@ const nextPage = async () => {
 	}
 	updateCards(currentPage);
 };
+
 const prevPage = () => {
 	if (currentPage > 1) currentPage--;
 	updateCards(currentPage);
